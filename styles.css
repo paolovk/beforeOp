@@ -1,0 +1,287 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+
+  margin:0;
+}
+
+
+/*------------------body --------------------------------*/
+
+body{
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+font-size: 14px;
+color: #222;
+line-height: 1.5em;
+margin:0;
+padding: 0;
+background-color: #eee;
+text-align: center;
+
+
+}
+
+.wrapper{
+  /* vw står för viewport width som innebär 100% utav displayens bredd */
+  max-width: 100vw;
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+  /* Grid är ett enkelt sätt att skapa en layout */
+  display: grid;
+  /* 5 kolumner 5vw i argin och alla andra är lika stora */
+  grid-template-columns: 5vw 1fr 1fr 1fr 5vw ;
+  /* 3 rader  */
+  grid-template-rows: 240px auto auto auto;
+  /* punkten betyder ett tomt elementsätt in i den kolumnen */
+  grid-template-areas: "header header header header header"
+                       " . section-left section aside ."
+                       "footer footer footer footer footer";
+}
+
+
+/*------------------ header--------------------------------*/
+#logo{
+  float: left;
+  background-image: url('logo.png');
+  height: 80px;
+  width: 80px;
+  /*  bakgrundsbilden ska vara centrerad, ej repeteras och ej bli avklippt*/
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px 100px;
+}
+
+/* Tar bort onödig länk dekoration och stylar om den */
+a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px black;
+}
+
+nav a:hover{
+  color: #2C588C;
+}
+
+nav li {
+  float: right;
+  margin:40px 60px 40px 10px;
+  list-style-type: none;
+}
+
+#about{
+  clear: both;
+
+}
+
+
+header{
+  grid-area: header;
+  background-color: yellow;
+  background-image: url('banner.jpg');
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/*------------------ headers--------------------------------*/
+
+h1{
+font-family: 'arial-bold', sans-serif;
+color:#CC0099;
+font-weight: bold;
+font-size:18px;
+
+}
+
+h2{
+
+  font-family: 'arial-bold', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size:26px;
+  color:white;
+}
+
+
+/*------------------ section center --------------------------------*/
+
+section{
+  /* grid-area är namnen som används som referensnamn vid grid-template */
+  grid-area: section;
+  text-align: left;
+  background-color: blue;
+  padding: 20px;
+margin:auto 20px;
+}
+
+#img-1{
+  width: 200px;
+  height: 200px;
+  border: 10px blue solid;
+  background-color: red;
+  background-image: url("img-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin: -120px auto 25px auto;
+}
+
+
+/*------------------ section right --------------------------------*/
+
+aside {
+  grid-area: aside;
+  text-align: left;
+  background-color: green;
+  padding: 12px;
+}
+
+#img-2{
+  width: 200px;
+  height: 200px;
+  border: 10px green solid;
+  background-color: green;
+  background-image: url("img-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin: -120px -12px 25px auto;
+}
+
+/*------------------ section left --------------------------------*/
+
+
+.section-left {
+  grid-area: section-left;
+  text-align: left;
+  background-color: green;
+  padding: 12px;
+
+
+}
+
+#img-3{
+  width: 200px;
+  height: 200px;
+  border: 10px green solid;
+  background-color: green;
+  background-image: url("img-3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin: -120px auto 25px -12px;
+}
+
+/*------------------ footer --------------------------------*/
+footer{
+grid-area: footer;
+  background-color: yellow;
+}
+footer ul{
+  /*  flex är ett flexibelt sätt att ordna elementen*/
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  list-style-type: none;
+}
+footer li{
+  display: inline-block;
+  margin: 10px 30px;
+  text-align: left;
+
+}
+
+/*------------------ media query för tablet --------------------------------*/
+
+
+@media screen and (max-width: 1000px) {
+
+  .wrapper{
+
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: 300px auto 200px;
+    grid-template-areas: "header header header"
+                         "section-left section aside"
+                         "footer footer footer";
+  }
+
+}
+/*------------------ media query för mobil --------------------------------*/
+@media screen and (max-width: 700px) {
+  h2{
+    font-size: 1.8em;
+  }
+
+  section{
+  margin:auto 0px;
+  }
+  a{
+    font-size: 0.8em;
+  }
+
+#logo{
+  float: none;
+  margin: 10px auto;
+}
+
+nav li{
+  float: none;
+  display: inline-block;
+  margin: 10px 40px;
+}
+
+  .wrapper{
+
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 300px auto auto auto 200px;
+    grid-template-areas: "header"
+                         "section"
+                         "section-left"
+                         "aside"
+                         "footer";
+  }
+
+  #img-2{
+    margin: -100px auto 25px auto;
+  }
+  #img-3{
+    margin: -100px auto 25px auto;
+  }
+
+  .section-left ,aside {
+    padding-top: 150px;
+  }
+  footer p {
+    font-size: 0.5em;
+  }
+  #about{
+    font-size: 0.7em;
+
+  }
+
+}
+
+/*----------------------- print queries----------------------------- */
+@media print{
+  #img-1, #img-2, #img-3{
+    display: hidden;
+  }
+
+  nav{
+    display: hidden;
+  }
+}

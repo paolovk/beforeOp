@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>Paolo von krogh</title>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+        <a href="index.html"> <div id="logo"></div> </a>
+
+      <nav>
+        <ul>
+          <li class="list-item"> <a href="">död link 2</a></li>
+          <li class="list-item"> <a href="">Död link 1</a></li>
+          <li class="list-item"> <a href="index.html">Home</a></li>
+        </ul>
+
+      </nav>
+
+      <div id="about">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, voluptatibus.</p>
+      </div>
+    </header>
+
+    <section>
+      <div id="img-1"> </div>
+<h1>Processen</h1>
+<p>ett sektionselement är ett semantisk element vilken betyder att den ger mening i koden som gör den lätt att förstå, därför använder jag sections taggar för att underlätta förståelsen i koden.(Kyrnin. J, 2018) </p>
+
+<p>Ett nav element är också ett semantiskt element som underlättar både för tolkning av kod och dessutom för användare med synnedsättningar som kan enkelt navigera i hemsidan. Den berättar att det finns länkar som navigerar användaren inom sidan eller externt. (Bailey. E, 2018)
+</p>
+
+<p>Det är standarden att navigationsmenyer ska vara i en UL för det underlättar då man ska skapa undermenyer men det finns diskussioner att det kan vara bättre att använda div eller span då det ökar tillgängligheten för synskadade (Coyer, C, 2013)
+</p>
+
+<xmp>
+  <aside id="section-right">
+
+    <div id="img-2"> </div>
+
+    <h2>22222</h2>
+    <p>
+     fixie vinyl tousled roof party deep v, flexitarian gluten-free franzen
+    </p>
+  </aside>
+</xmp>
+
+<p>Anledningen till aside är för det är ett semantisk element som används vid element som ska vara vid sidan</p>
+
+
+<xmp>
+  .wrapper{
+    /* vw står för viewport width som innebär 100% utav displayens bredd */
+    max-width: 100vw;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    /* Grid är ett enkelt sätt att skapa en layout */
+    display: grid;
+    /* 5 kolumner 5vw i argin och alla andra är lika stora */
+    grid-template-columns: 5vw 1fr 1fr 1fr 5vw ;
+    /* 3 rader  */
+    grid-template-rows: 240px auto auto auto;
+    /* punkten betyder ett tomt elementsätt in i den kolumnen */
+    grid-template-areas: "header header header header header"
+                         " . section-left section aside ."
+                         "footer footer footer footer footer";
+  }
+</xmp>
+
+<p>Grid templates är det bästa som finns! (helt objektiv sanning). Det gör det väldigt mycket lättare
+  att hålla en ren markup, göra komplicerade layouter och enkelt att ändra senare i projektets gång.
+  Det är också väldigt semantiskt då man lätt förstår hur layoutet ska se ut.
+  dessutom så funkar det med de flesta webbläsarna(Soares. W, 2018)</p>
+
+
+<xmp>
+
+  <footer>
+    <ul>
+      <li class="list-item"> <h3>Address</h3>
+        <p>Gatan gatan</p>
+        <p>123 45 stad</p>
+      </li>
+      <li class="list-item"> <h3>Telefon</h3>
+        <p>+46 0700707409</p>
+        <p>wow ett nummer till 1337</p></li>
+      <li class="list-item"> <h3>Epost</h3>
+        <p>snailmail4loser@awesome.com </p>
+        <p>trorduvekligenjagkommersvara@tönt.nu</p></li>
+    </ul>
+  </footer>
+
+
+</xmp>
+
+
+
+<p>Anledningen är för det är ett symaniskt sätt att få en footer och med en ul så kan man lätt få under menyer.
+(Pluralsight, 2015)
+</p>
+
+<xmp>html ,body{
+  font-family: 'Montserrat', sans-serif;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</xmp>
+<br>
+<p>Viktigt att skapa en nollställning av margin och padding så man har mer kontroll över layouten.
+  Border-box gör så att även om man lägger på en border eller
+  padding så håller lådans ytterdimensioner detsamma vilket gör det
+  lättare and strukturera. (Mosley. M, 2015)
+</p>
+
+<br>
+<p>För att hitta rätt vidd vid media queries så kollade jag manuellt när jag tyckte designen inte såg bra ut längre och ändrade då designen. Och en relativt stor mobil har den vidd på 750px.</p>
+
+
+
+<p>vh, vw och % är relativa måttenheter och kan användas flitigt för att få en responsiv design. vh är en procent enhetet som bestämmer hur stor elementet ska vara relaterat till fönstrets höjd och vw är fönstrets vidd. Detta gör det enkelt att relatera de direkt till skärmstorlekar till skillnad till % som är relaterat till sin parent element. (Myrain.s, 2017)</p>
+<br>
+
+<p>Flexbox är ett enkelt sätt att skapa komplicerade layouts på ett lätt sättt
+    I detta fallet så va et ett perfekt sätt att distrubera kolumnerna i footern så de hade samma avstånd mellan varandra (space-around). (Aderinokun. I, 2016)
+  </p>
+
+
+
+<h2>Referenser</h2>
+<p>Kyrnin. J. (25/07-18) When to Use the HTML5 SECTION Element [Elektronisk]
+Tillgänglig: https://www.lifewire.com/html5-section-element-3467994 [14/03-19]
+</p>
+<br>
+<p>Mosley. M. (10/09-10) Box Sizing [Elektronisk]
+Tillgänglig: https://css-tricks.com/box-sizing/ [09/04-19]
+</p>
+<br>
+<p>Bailey. E. (24/09-18) nav: The Navigation Section element [Elektronisk]
+Tillgänglig: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav [14/03-19]</p>
+
+<br>
+<p>Sores. W. (11/08-18) Why you should already be using CSS Grid [Elektronisk]
+Tillgänglighttps: https://dev.to/willamesoares/why-you-should-already-be-using-css-grid-pch/ [09/04-19]
+</p>
+<br>
+<p>Myrain. S. (05/06-17) Fun with Viewport Units [Elektronisk]
+Tillgänglig:https://css-tricks.com/fun-viewport-units/ [09/04-19]
+</p>
+<br>
+<p>Coyer, C (29/01-13). Navigation in Lists: To Be or Not To Be [Elektronisk]
+Tillgänglig: https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/  [14/03-19]
+</p>
+<br>
+<p>Pluralsight (26/02-2015). What's the Difference Between Image and Figure Tags in HTML5? [Elektronisk]
+Tillgänglig: https://www.pluralsight.com/blog/creative-professional/whats-difference-image-figure-tags-html5  [14/03-19]</p>
+</p>
+<p>Ire Aderinokun (23/02-201). 6 Reasons to Start Using Flexbox [Elektronisk]
+Tillgänglig: https://bitsofco.de/6-reasons-to-start-using-flexbox/  [14/03-19]</p>
+</p>
+
+    </section>
+
+
+    <footer>
+      <ul>
+        <li class="list-item"> <h3>Address</h3>
+          <p>Gatan gatan</p>
+          <p>123 45 stad</p>
+        </li>
+        <li class="list-item"> <h3>Telefon</h3>
+          <p>+46 0700707409</p>
+          <p>wow ett nummer till 1337</p></li>
+        <li class="list-item"> <h3>Epost</h3>
+          <p>snailmail4loser@awesome.com </p>
+          <p>trorduvekligenjagkommersvara@tönt.nu</p></li>
+      </ul>
+    </footer>
+
+  </div>
+
+</body>
+</html>
